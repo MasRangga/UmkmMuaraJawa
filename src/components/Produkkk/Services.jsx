@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaWhatsapp, FaArrowRight } from "react-icons/fa";
-import Img2 from "../../assets/biryani2.png";
+import { CgArrowsExpandUpRight } from "react-icons/cg";
 import KontenLaki from "../../assets/KontenLaki.png"
 import KontenCewe from "../../assets/KontenCewe.png"
 
@@ -232,15 +232,14 @@ const Services = () => {
                       rel="noopener noreferrer"
                       className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
                     >
-                      <FaWhatsapp className="mr-2" />
+                      <FaWhatsapp className="mr-2 text-2xl" />
                       WhatsApp
                     </a>
                     <button
                       onClick={() => openModal(service)}
-                      className="flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary"
+                      className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-800 hover:shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105"
                     >
-                      <FaArrowRight className="mr-2" />
-                      Detail
+                      <CgArrowsExpandUpRight className="text-2xl" />
                     </button>
                   </div>
                 </div>
@@ -268,26 +267,28 @@ const Services = () => {
                       style={{ maxWidth: "200px", height: "auto" }}
                     />
 
-                    <a
-                      href={`https://wa.me/${
-                        selectedProduct.whatsapp
-                      }?text=${encodeURIComponent(
-                        "Hai! Selamat datang. Kami siap membantu Anda. Silakan pesan produk yang Anda inginkan!"
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
-                    >
-                      <FaWhatsapp className="mr-2" />
-                      Chat via WhatsApp
-                    </a>
+                    <div className="flex flex-col items-center space-y-4">
+                      <a
+                        href={`https://wa.me/${
+                          selectedProduct.whatsapp
+                        }?text=${encodeURIComponent(
+                          "Hai! Selamat datang. Kami siap membantu Anda. Silakan pesan produk yang Anda inginkan!"
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+                      >
+                        <FaWhatsapp className="mr-2 text-2xl" />
+                        <span>Chat via WhatsApp</span>
+                      </a>
 
-                    <button
-                      onClick={closeModal}
-                      className="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                    >
-                      Close
-                    </button>
+                      <button
+                        onClick={closeModal}
+                        className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
+                      >
+                        Close
+                      </button>
+                    </div>
                   </>
                 )}
               </div>
